@@ -5,7 +5,7 @@ Font::Font(Root *root, TTF_Font *font) {
 	this->font = font;
 	this->maxWidth = 0;
 	this->root = root;
-	this->spacing=10;
+	this->spacing=3;
 	build();
 }
 	
@@ -111,7 +111,7 @@ SDL_Rect Font::write(const char *msg, const SDL_Rect &rect, const SDL_Color &col
 		}
 
 
-		widths[0] = 20;
+		
 		if(msg[i] >= ' ' && msg[i] <= '~') {
 			src.x = maxWidth * ((msg[i] - ' ')%8);
 			src.y = ceil((msg[i] - ' ') / 8)*height;
